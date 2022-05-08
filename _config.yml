@@ -1,7 +1,7 @@
-title:              Clean Blog
-email:              your-email@example.com
-description:        A Blog Theme by Start Bootstrap
-author:             Start Bootstrap
+title:              NaiFan Blog
+email:              wywangshengshu@e163.com
+description:        Make it slowly
+author:             
 baseurl:            ""
 url:                "https://jack-wangss.github.io/"
 
@@ -13,7 +13,7 @@ instagram_username:
 linkedin_username:
 
 # Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+google_analytics:    # out your google-analytics code
 
 # Build settings
 markdown:           kramdown
