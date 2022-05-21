@@ -71,8 +71,11 @@ background: '/img/posts/01.jpg'
 特殊值的存在，让编程者可以简单的处理很多情况。具体来说，对于任意实数 `a` ，以下规则适用于除以无穷值。
 
 $$+a/(+\infty)=+0,$$
+
 $$-a/(+\infty)=-0,$$
+
 $$+a/(-\infty)=-0,$$
+
 $$-a/(-\infty)=+0.$$
 
 >  `IEEE floating-point`有两种表示0的方式，一种作为正数，一种作为负数。需要区分 `–0` 和 `+0` 场景不多，但需要记住。
@@ -80,11 +83,17 @@ $$-a/(-\infty)=+0.$$
 其他的一些情况:
 
 $$\infty+\infty=\infty,$$
+
 $$\infty-\infty= NaN,$$
+
 $$\infty \times \infty=\infty,$$
+
 $$\infty / \infty=NaN,$$
+
 $$\infty / a=\infty,$$
+
 $$\infty / 0=\infty,$$
+
 $$ 0 / 0=NaN.$$
 
 无穷值在布尔运算中的规则：
@@ -97,7 +106,9 @@ $$ 0 / 0=NaN.$$
 2. 所有包含`NaN`的布尔运算，结果为`false`
 
 除以0的规则（a为正实数）：
+
 $$ +a / +0=+\infty,$$
+
 $$ -a / +0=-\infty.$$
 
 > 如果出现`-0`，则需要注意。
