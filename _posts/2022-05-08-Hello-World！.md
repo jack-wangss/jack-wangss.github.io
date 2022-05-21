@@ -27,7 +27,7 @@ background: '/img/posts/01.jpg'
 Flag立好了，下面可以挖坑了。
 
 为了不半途而废，后续的更新打算分成两部分
-- 稳定更新：每月或每两月一次，做`Fundamentals of Computer Graphics, Fourth Edition`的翻译+笔记。
+- 稳定更新：每月或每两月一次，做`Fundamentals of Computer Graphics, Fifth Edition`的笔记。
 - 不稳定更新：平时研究的技术相关内容。
 
 `Posts != NULL` 发了这篇，就已经比上次成功了: )
