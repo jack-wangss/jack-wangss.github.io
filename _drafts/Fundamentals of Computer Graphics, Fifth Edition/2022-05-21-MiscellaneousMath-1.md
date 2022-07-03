@@ -204,16 +204,187 @@ $$ \text{Triangle area}=\frac{1}{4}\sqrt{(a+b+c)(-a+b+c)(a-b+c)(a+b-c)}$$
 
 ## 2.4 向量 Vectors
 
+向量是描述长度和方向的量，可以用一个箭头来表示。如果两个向量有同样的长度和方向，则两个向量相等（即使他们在不同的位置）。一个向量$a$的长度为$||a||$，单位向量是长度为1的向量，零向量（zero vector）是长度为0的向量，0向量的方向无定义。
+
+向量可以表示很多内容。例如，可以用向量来表示偏移（offset），也叫做位移（displacement）。向量也可以用来保存位置（location）。
+
 ### 2.4.1 向量运算 Vector Operations
 
+向量加法遵循平行四边形法则（parallelogram rule），即两个向量之和为两个向量首尾相连后的结果，向量加法遵循交换律（commutative）：
+
+$$ a+b=b+a $$
+
+向量也可以进行乘法运算。向量有几种不同的乘法运算，我们先介绍缩放的计算，向量乘以一个实数可以缩放一个向量，缩放改变向量的长度，而不会改变方向。后面我们还会讨论向量的点乘（dot product）和叉乘（cross product）运算。
+
 ### 2.4.2 向量的笛卡尔坐标 Cartesian Coordinates of Vector
+
+2D向量可以写成任意两个非零且不平行的向量的组合。这两个向量的属性叫做线性独立（linear independence）。两个线性独立的向量来自2D基（basis），因此称为基向量（basis vectors）。例如向量$c$可以表示为两个a、b两个基向量的组合：
+
+$$ c=a_aa+b_cb$$
+
+在两个基向量垂直的时候非常有用，尤其当他们都是单位向量的时候。我们假设这两个基向量分别是x、y，我们可以用这两个向量表示笛卡尔坐标中所有的点。
+
+$$ a=x_a X+y_b Y$$
+
+我们可以方便的计算a的长度：
+
+$$ ||a||=\sqrt{x_a^2+y_a^2}$$
+
+为了方便计算，可以把a写成矩阵形式：
+
+$$
+a=
+\begin{bmatrix} 
+x_a \\
+y_a
+\end{bmatrix}
+$$
+
+为了排版方便，我们也会写成行矩阵的形式：
+
+$$
+a^T=
+\begin{bmatrix} 
+x_a & y_a
+\end{bmatrix}
+$$
+
 ### 2.4.3 点乘 Dot Product
+
+向量a和b的点乘写做$a \cdot b$，由于点乘的结果是标量，点乘也被称作标量乘（scalar product）。点乘的结果和他们的长度与角度相关：
+
+$$ a \cdot b=||a|| \ ||b|| \ cos \phi$$
+
+点乘遵循交换律和结合律：
+$$a \cdot b=b \cdot a$$
+$$a\cdot(b+c)=a \cdot b+ a \cdot c$$
+$$(ka) \cdot b=a \cdot(kv)=ka \cdot b$$
+
+如果2D向量a、b在笛卡尔坐标系中，我们可以利用$ x \cdot x =y \cdot y =1$和$ x \cdot y=0$推出下面的公式：
+
+$$ 
+\begin{align} 
+a\cdot b &=(x_ax+y_ay) \cdot (x_bx+y_by) \\
+&=x_ax_b(x\cdot x)+x_ay_b(x\cdot y)+x_by_a(y\cdot x)+y_ay_b(y\cdot y)\\
+&=x_ax_b+y_ay_b
+\end{align} 
+$$
+
+3D向量同理：
+
+$$ a\cdot b=x_ax_b+y_ay_b+z_az_b $$
+
 ### 2.4.4 叉乘 Cross Product
-### 2.4.5 正交基和坐标系 Orthonormal Base and Coordinate Frames
+
+向量a和b的叉乘写做$a\times b$，叉乘通常用在3D向量。叉乘的结果是与a、b垂直的3D向量，向量长度与a、b的角度相关:
+
+$$||a \times b||=||a||\ ||b|| \sin\phi$$
+
+角度为90度时，叉乘结果的向量为，长度为a、b所形成平行四边形的面积。
+
+$x\times y$的结果可能是z，也可能是-z。惯例一般采用z的定义则：
+
+$$ z=x\times y $$
+
+
+其他笛卡尔坐标系中的组合如下：
+
+$$ x\times y = +z $$
+$$ y\times x = -z $$
+$$ y\times z = +x $$
+$$ z\times y = -x $$
+$$ z\times x = +y $$
+$$ x\times z = -y $$
+
+由于$\sin\phi$的存在，向量叉乘其自身为0。以上的描述，不足以在笛卡尔坐标系创建无歧义的坐标系。想象如果我们构建一个坐标系，x朝向东方，y朝向北方，z与它们保持垂直。那么z有上下两种可能，通常我们会采用朝上的定义，也叫做“右手坐标系”。
+
+叉乘遵循以下定律：
+$$a\times(b+c)=a \times b+ a \times c$$
+$$a \times(kb)=k(a \times b)$$
+$$a \times b=-(b \times a)$$
+
+在笛卡尔坐标系中，我们可以用显式的拓展计算叉乘：
+
+$$a \times b=(y_az_b-z_ay_b,z_ax_b-x_az_b,x_ay_b-y_ax_b).$$
+
+
+### 2.4.5 正交基和坐标框架 Orthonormal Base and Coordinate Frames
+
+管理坐标系是大多数图形程序的核心工作之一，其中的关键就是管理正交基（Orthonormal Base）。2D向量u、v可以组成一个正交基，u、v垂直，且长度为1。因此：
+
+$$||u||=||v||=1,$$
+$$u\cdot v=0.$$
+
+3D中，由u、v、w三个向量组成：
+
+$$||u||=||v||=||w||=1,$$
+$$u\cdot v=v\cdot w=w\cdot u=0.$$
+
+右手坐标系的正交坐标系如下：
+
+$$w=u\times v$$
+
+笛卡尔标准正交基只是无数正交基中的一个，使它有意义的是在程序中，它所包含的隐式的原点位置。所以它的x、y、z向量和原点o的位置不需要显式保存。全局模型通常存储在标准坐标系统中，因此它通常被称为全局坐标系。但要是我们想使用另一个坐标系统，我们就需要保存这些信息，这个额外的系统叫做参照框架（frame of reference）或坐标框架（coordinate frame）。
+
+例如在一个飞行场景中，以飞机头的位置为原点创建了一个参照框架，同时飞机也在标准坐标系统中。这种基于特定对象的坐标系叫做局部坐标系（local coordinate system）。
+
+局部坐标信息会存在标准坐标系中，比如u的坐标:
+
+$$(u=x_uX+y_uY+z_uZ)$$
+
+如果已知一个局部坐标系的坐标，可以通过局部坐标系在标准坐标系中的位置，求出其在标准坐标系中的位置:
+
+$$a=u_aU+v_aV+w_aW$$
+
+如果已知标准坐标系中的向量b，可以通过点乘的方式得到局部坐标系的值：
+
+$$ u_b=u\cdot b; v_b=v\cdot b;w_b=w\cdot b.$$
+
+推理如下：
+$$u_bU+v_bV+w_bW=b$$
+
+$$u\cdot b=u_b(u\cdot u)+v_b(u\cdot v)+w_b(u\cdot w)=u_b.$$
+
+<div style="text-align: center">
+<img src="./4.png"/>
+</div>
+
 ### 2.4.6 从一个向量构造基 Constructing a Basis from a Single Vector
+
+我们常常需要构造一个基与某个向量对齐，例如已知向量a，需要和基的w对齐，首先可以计算w：
+
+$$w=\frac{a}{||a||}$$
+
+
+选择任意不和w重合的向量t，计算u：
+
+$$u=\frac{t\times w}{||t\times w||}$$
+
+找t的时候为了保证不和w重合，可以把w最小的分量改成1。例如$w=(1/\sqrt{2},-1/\sqrt{2},0)$,则$t=(1/\sqrt{2},-1/\sqrt{2},1)$。
+
+最后，根据w、u求得v：
+
+$$v=w\times u.$$
+
+使用此构造的一个示例是表面着色，其中需要与表面法线对齐的基。
+对于生产代码，最近皮克斯的研究人员开发了一个
+从两个向量构造向量的相当出色的方法，其紧凑性和效率令人印象深刻（Duff et al., 2017）。 他们提供经过实战测试的代码，并鼓励读者使用它，因为在整个行业中使用它时并没有出现“陷阱”。
+
 ### 2.4.7 从两个向量构造基 Constructing a Basis from Two Vectors
+
+已知两个向量构造基是比较简单的，主要是要确保最后的结果是正交的，下面是一种推荐的做法：
+
+$$w=\frac{a}{||a||},$$
+$$u=\frac{b\times w}{||b\times w||},$$
+$$v=w\times u.$$
+
 ### 2.4.8 处理一个基 Squaring Up a Basis
 
+有时候你会遇到一个基非正交的情况，可能是计算或保存时的精度问题导致。可以采用上面的方式重新构造基。
+
+这种方法适用于许多应用程序，但不是最好的。它确实产生了准确的正交向量，并且对于几乎正交的起始基，结果不会偏离起点太远。 然而，它是不对称的：它“偏向” w 胜过 v ， v 胜过 u。
+它选择一个接近起始基的基，但不能保证选择
+最接近的标准正交基。 这种方式不能满足需求时，SVD（第 6.4.1 节）可用于计算保证最接近原始基的正交基。
 
 ## 2.5 积分 Integration
 
