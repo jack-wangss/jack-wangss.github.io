@@ -1,3 +1,10 @@
+---
+layout: post
+title: "2.数学相关 2"
+subtitle: "2 Miscellaneous Math 2"
+background: '/img/posts/01.jpg'
+---
+
 ## 2.7 曲线和曲面 Curves and Surfaces
 ### 2.7.1 2D隐式曲线 2D Implicit Curves
 ### 2.7.2 2D梯度 The 2D Gradient

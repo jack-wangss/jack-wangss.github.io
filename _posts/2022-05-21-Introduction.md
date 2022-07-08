@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "1.图形学介绍"
-subtitle: "1 Introduction"
+title: "FOCG5: 1.图形学介绍"
+subtitle: "FOCG5: 1 Introduction"
 background: '/img/posts/01.jpg'
 ---
 
