@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "2.数学相关 2"
-subtitle: "2 Miscellaneous Math 2"
+title: "FOCG5: 2.数学相关 2"
+subtitle: "FOCG5: 2 Miscellaneous Math 2"
 background: '/img/posts/01.jpg'
 ---
 
@@ -99,6 +99,7 @@ $$(y_0-y_1)x+(x_1-x_0)y+x_0 y_1-x_1y_0=0$$
 $$y=\frac{y_0-y_1}{x_1-x_0}x+\frac{x_1y_0-x_0 y_1}{x_1-x_0}$$
 
 隐式直线的一个有趣的特性，可以用来计算点到直线的距离。$Ax+By+C$平行线的距离等于$k\sqrt{A^2+B^2}$，对于点$(x,y)+k(A,B)$，$(x,y)$是直线上的一点,等于：
+
 $$
 \begin{align} 
 f(x+kA,y+kB) &=Ax+kA^2+By+kB^2+C \\
@@ -111,6 +112,7 @@ $$
 $$k\sqrt{A^2+B^2}=\frac{f(a,b)}{\sqrt{A^2+B^2}}$$
 
 #### 二次曲线 Quadratic Curves
+
 前面的内容我们讨论了线性隐式直线$f(x,y)=0$。如果f是关于x和y的二次函数，其常见形式：
 
 $$Ax^2+Bxy+Cy^2+Dx+Ey+F=0,$$
@@ -202,6 +204,7 @@ $$p=o+td$$
 ### 2.7.8 3D 参数曲面 3D Parametric Surfaces
 
 向量形式：
+
 $$
 \begin{bmatrix} 
 x \\
@@ -213,11 +216,11 @@ $$
 
 举个例子，地球表面的点可以用经度和纬度两个参数描述。如果我们把地球的球心定义为原点，r为半径，就可以构建一个球坐标。得出以下方程：
 
-$$x=r \cos \phi \sin \theta \$$
+$$x=r \cos \phi \sin \theta $$
 
-$$y=r \sin \phi \sin \theta \$$
+$$y=r \sin \phi \sin \theta $$
 
-$$z=r \cos \theta \$$
+$$z=r \cos \theta $$
 
 <div style="text-align: center">
 <img src="/img/posts/2 Miscellaneous Math 2/3.png"/>
