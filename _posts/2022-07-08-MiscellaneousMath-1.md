@@ -225,7 +225,7 @@ $$ \cos A \cos B=(\cos(A+B)+\cos(A-B))/2 $$
 
 $$ \frac{\sin A}{a}=\frac{\sin B}{b}=\frac{\sin C}{c}   \  (Law\ of\ sines)$$
 
-$$ c^2==a^2+b^2-2ab\cos C  \ (Law\ of\ cosines)$$
+$$ c^2=a^2+b^2-2ab\cos C  \ (Law\ of\ cosines)$$
 
 $$ \frac{a+b}{a-b}=\frac{\tan (\frac{A+B}{2})}{\tan (\frac{A-B}{2})} \ (Law\ of\ tangents)$$
 
