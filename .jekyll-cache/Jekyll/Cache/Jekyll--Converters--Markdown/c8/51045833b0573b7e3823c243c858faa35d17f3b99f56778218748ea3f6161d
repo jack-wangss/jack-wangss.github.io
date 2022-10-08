@@ -1,4 +1,4 @@
-I"�m<p>很多图形处理操作，是把数学公式翻译成代码的工作，公式越清晰，代码越简洁。本章主要是回溯高中和大学的一些数学工具。</p>
+I"�m<p>很多图形处理操作，是把数学公式翻译成代码的工作，公式越清晰，代码越简洁。本章主要是回溯高中和大学的一些数学工具。</p>
 
 <h2 id="21-集和映射-sets-and-mappings">2.1 集和映射 Sets and Mappings</h2>
 
@@ -236,7 +236,7 @@
 
 \[\frac{\sin A}{a}=\frac{\sin B}{b}=\frac{\sin C}{c}   \  (Law\ of\ sines)\]
 
-\[c^2==a^2+b^2-2ab\cos C  \ (Law\ of\ cosines)\]
+\[c^2=a^2+b^2-2ab\cos C  \ (Law\ of\ cosines)\]
 
 \[\frac{a+b}{a-b}=\frac{\tan (\frac{A+B}{2})}{\tan (\frac{A-B}{2})} \ (Law\ of\ tangents)\]
 
