@@ -51,7 +51,7 @@ shear\_x(s)=
 1 & s\\
 0 & 1\\
 \end{bmatrix}
-\ 
+\
 ,
 \
 shear\_y(s)=

@@ -5,7 +5,7 @@ subtitle: "FOCG5: 5 Surface Shading"
 background: '/img/posts/01.jpg'
 ---
 
-用与计算着色的方程叫做着色模型（shading model），针对不同的应用，有很多不同的着色模型。着色模型相对独立，一些模型既可以用在光线追踪系统，也能用在着色系统中。本章主要介绍一个基于点光源的简单着色模型。
+用于计算着色的方程叫做着色模型（shading model），针对不同的应用，有很多不同的着色模型。着色模型相对独立，一些模型既可以用在光线追踪系统，也能用在着色系统中。本章主要介绍一个基于点光源的简单着色模型。
 
 
 ## 5.1 点状光源
@@ -24,7 +24,7 @@ $$ E=\frac{P}{4\pi}\frac{1}{r^2}=\frac{I}{r^2}$$
 
 $I=P/ 4\pi$ 代表光源的强度，它是光源自身的属性，与照明的表面形状无关。$r^{-2}$一般叫做平方反比，描述irradiance与光源到表面距离r的关系。
 
-计算irradiance还需要考虑的问题是入射角（angle of incidence），面法向和光线方向的夹角。如图5.2，面法向与光线方向一致时，表面接收了全部的光线；将面倾斜60°时，只接受到了一半的光线。转动$\theta$ 度所接收的能量与 $\cos \theta $成正比。因为面积没有变化，所有irradiance（每单位面积的辐射能量）也和同样的因子成正比。这就是`Lamber's cosine law`，因为Johann Heinrich Lambert在他1760年的书 `Photometria`提出。
+计算irradiance还需要考虑的问题是入射角（angle of incidence），面法向和光线方向的夹角。如图5.2，面法向与光线方向一致时，表面接收了全部的光线；将面倾斜60°时，只接受到了一半的光线。转动$\theta$ 度所接收的能量与 $\cos \theta$成正比。因为面积没有变化，所有irradiance（每单位面积的辐射能量）也和同样的因子成正比。这就是`Lamber's cosine law`，因为Johann Heinrich Lambert在他1760年的书 `Photometria`提出。
 
 <div style="text-align: center">
 <img src="/img/posts/5 Surface Shading/1.png"/>
