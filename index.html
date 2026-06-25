@@ -1,4 +1,101 @@
 ---
-layout: home
-background: '/img/bg-index.jpg'
+layout: default
 ---
+
+<!-- 3D Canvas -->
+<canvas id="scene-canvas"></canvas>
+
+<!-- Loading indicator -->
+<div id="scene-loader">
+  <span class="loader-text">Loading 3D Scene...</span>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">Graphics &times; Code</span>
+    <h1 class="hero-title">NaiFan</h1>
+    <p class="hero-subtitle">Computer Graphics &middot; WebGL &middot; Creative Coding</p>
+    <div class="social-links">
+      <a href="https://github.com/jack-wangss" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="mailto:wywangshengshu@163.com" aria-label="Email" title="Email">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 3v18h24V3H0zm21.518 2L12 12.713 2.482 5h19.036zM2 19V7.183l10 8.104 10-8.104V19H2z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="projects" id="projects">
+  <div class="projects-container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">// 作品 &amp; 实验</p>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <span class="project-icon">🧊</span>
+        <h3 class="project-title">3D Model Viewer</h3>
+        <p class="project-description">基于 Three.js 的在线 3D 模型查看器，支持旋转、缩放、材质切换。</p>
+        <span class="project-badge coming-soon">即将上线</span>
+      </div>
+
+      <div class="project-card">
+        <span class="project-icon">🎨</span>
+        <h3 class="project-title">Shader Lab</h3>
+        <p class="project-description">在线 GLSL Shader 编辑器，实时预览自定义顶点与片段着色器效果。</p>
+        <span class="project-badge coming-soon">即将上线</span>
+      </div>
+
+      <div class="project-card">
+        <span class="project-icon">🎮</span>
+        <h3 class="project-title">2048 Game</h3>
+        <p class="project-description">经典 2048 数字合并游戏，支持键盘与触摸操作，本地保存最高分。</p>
+        <span class="project-badge coming-soon">即将上线</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="https://github.com/jack-wangss" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:wywangshengshu@163.com">Email</a>
+  </div>
+  <p>&copy; 2026 NaiFan &middot; Built with Three.js &amp; passion for graphics</p>
+</footer>
+
+<!-- 3D Scene Script -->
+<script src="{{ "/assets/js/scene.js" | relative_url }}"></script>
+
+<!-- Scroll reveal animation -->
+<script>
+  (function () {
+    var cards = document.querySelectorAll('.project-card');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry, index) {
+        if (entry.isIntersecting) {
+          setTimeout(function () {
+            entry.target.classList.add('visible');
+          }, index * 150);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    cards.forEach(function (card) {
+      observer.observe(card);
+    });
+  })();
+</script>

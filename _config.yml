@@ -1,25 +1,7 @@
-title:              NaiFan Blog
-email:              wywangshengshu@163.com
-description:        Make it slowly
-author:             
-baseurl:            ""
+title:              NaiFan
+description:        Graphics & Code — 3D interactive homepage
 url:                "https://jack-wangss.github.io/"
-
-# Social Profiles
-twitter_username:   
-github_username:    
-facebook_username:  
-instagram_username:  
-linkedin_username:
-
-# Add your google-analytics ID here to activate google analytics
-google_analytics:    # out your google-analytics code
+baseurl:            ""
 
 # Build settings
 markdown:           kramdown
-paginate:           5
-paginate_path:      "/posts/page:num/"
-plugins:
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
